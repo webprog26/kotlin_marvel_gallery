@@ -2,11 +2,21 @@ package com.example.kotlinmarvelgallery
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
+import com.example.kotlinmarvelgallery.utils.bindView
 
 class MainActivity : AppCompatActivity() {
+
+    val tvText: TextView by bindView(R.id.tv_text)
+    val btnClick: Button by bindView(R.id.btn_click)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        btnClick.setOnClickListener {
+            tvText.text = "Clicked"
+        }
     }
 }
