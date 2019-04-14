@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import com.example.kotlinmarvelgallery.data.Doctor
 import com.example.kotlinmarvelgallery.utils.bindView
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
 
         btnClick.setOnClickListener {
             tvText.text = "Clicked"
+            ParamsReceiverActivity.start(this, Doctor(1, "John Smith"), "Doc")
         }
     }
 }
