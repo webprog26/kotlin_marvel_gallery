@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Kotlin Marvel Gallery</string>
+
+    <string name="marvel_copyright_notice">Data provided by Marvel. &#9400; 2017 MARVEL</string>
 </resources>
