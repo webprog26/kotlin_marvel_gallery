@@ -8,7 +8,7 @@ class BaseMarvelRepository (
     val onGetCharacters: () -> Single<List<MarvelCharacter>>
 ) : MarvelRepository {
 
-    override fun getAllCharacters(): Single<List<MarvelCharacter>> {
+    override fun getAllCharacters(serachQuery: String?): Single<List<MarvelCharacter>> {
         return onGetCharacters()
     }
 }
