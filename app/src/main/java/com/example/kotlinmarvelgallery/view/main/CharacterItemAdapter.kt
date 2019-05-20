@@ -10,17 +10,19 @@ import com.example.kotlinmarvelgallery.view.common.ItemAdapter
 import com.example.kotlinmarvelgallery.view.common.bindView
 import com.example.kotlinmarvelgallery.view.common.loadImage
 
-class CharacterItemdapter(
-    val character: MarvelCharacter
-) : ItemAdapter<CharacterItemdapter.ViewHolder>(R.layout.item_character) {
+class CharacterItemAdapter(
+    val character: MarvelCharacter,
+    val clicked: (MarvelCharacter) -> Unit
+) : ItemAdapter<CharacterItemAdapter.ViewHolder>(R.layout.item_character) {
 
-    override fun onCreateViewHolder(itemView: View): CharacterItemdapter.ViewHolder {
+    override fun onCreateViewHolder(itemView: View): CharacterItemAdapter.ViewHolder {
         return ViewHolder(itemView)
     }
 
     override fun ViewHolder.onBindViewHolder() {
         textView.text = character.name
         imageView.loadImage(character.imageUrl)
+        itemView.setOnClickListener { clicked(character) }
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
